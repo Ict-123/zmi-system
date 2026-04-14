@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 43 55% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 30 10% 25%;
+
+    --muted: 40 15% 94%;
+    --muted-foreground: 30 5% 45%;
+
+    --accent: 30 30% 88%;
+    --accent-foreground: 30 15% 20%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 87%;
+    --input: 35 20% 87%;
+    --ring: 43 55% 54%;
+
+    --radius: 0.5rem;
+
+    --gold: 43 55% 54%;
+    --gold-light: 43 50% 90%;
+    --gold-dark: 30 40% 30%;
+    --brown: 30 30% 25%;
+    --brown-light: 30 20% 40%;
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+    --info: 210 70% 50%;
+    --info-foreground: 0 0% 100%;
+    --warning: 45 90% 50%;
+    --warning-foreground: 30 10% 15%;
+
+    --sidebar-background: 30 30% 25%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 43 55% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 25% 32%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 30 20% 35%;
+    --sidebar-ring: 43 55% 54%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Source Sans 3', sans-serif;
+  }
+
+  .dark {
+    --background: 30 15% 10%;
+    --foreground: 40 20% 90%;
+    --card: 30 15% 14%;
+    --card-foreground: 40 20% 90%;
+    --popover: 30 15% 14%;
+    --popover-foreground: 40 20% 90%;
+    --primary: 43 55% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 15% 20%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 30 10% 20%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 30 15% 22%;
+    --accent-foreground: 40 20% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 10% 25%;
+    --input: 30 10% 25%;
+    --ring: 43 55% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .grade-a-plus {
+    @apply bg-green-50 border-l-4 border-green-500;
+  }
+  .grade-a {
+    @apply bg-blue-50 border-l-4 border-blue-500;
+  }
+  .grade-a-minus {
+    @apply bg-yellow-50 border-l-4 border-yellow-500;
+  }
+  .grade-b-plus {
+    @apply bg-red-50 border-l-4 border-red-500;
+  }
+  .stat-card {
+    @apply bg-card rounded-lg p-6 shadow-sm border border-border transition-shadow hover:shadow-md;
+  }
+  .gold-header {
+    @apply bg-primary text-primary-foreground px-4 py-3 font-semibold;
+    font-family: var(--font-display);
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+  }
+  .grade-sheet-print {
+    page-break-after: always;
+    border: 2px solid #C9A84C;
+    padding: 20px;
+  }
+}

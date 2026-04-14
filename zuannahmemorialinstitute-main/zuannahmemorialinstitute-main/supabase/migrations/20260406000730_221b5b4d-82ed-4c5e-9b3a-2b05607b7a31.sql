@@ -1,0 +1,1 @@
+ALTER TABLE public.subjects_config ADD COLUMN teacher_user_id uuid DEFAULT NULL;
